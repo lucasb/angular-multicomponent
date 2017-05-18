@@ -1,0 +1,15 @@
+<div>
+    <h1>Component 1</h1>
+    <h4>List Module</h4>
+    <div ng-controller="ListCtrl as list">
+        <p ng-repeat="message in list.messages">{{ message.id }}: {{ message.text }}</p>
+    </div>
+    <hr/>
+    <h4>Post Module</h4>
+    <div ng-controller="PostCtrl as post">
+        <form ng-submit="post.addMessage(post.newMessage)">
+            <input type="text" ng-model="post.newMessage">
+            <button type="submit">Add Message</button>
+        </form>
+    </div>
+</div>

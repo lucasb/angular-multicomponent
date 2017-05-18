@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJS Integration</title>
+    <!-- angular files -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <!-- common files -->
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="common/common.js"></script>
+    <script type="text/javascript" src="common/sharedata/sharetext.service.js"></script>
+    <!-- component 1 files -->
+    <script type="text/javascript" src="component1/component1.js"></script>
+    <script type="text/javascript" src="component1/list/list.module.js"></script>
+    <script type="text/javascript" src="component1/post/post.module.js"></script>
+    <script type="text/javascript" src="component1/post/message.service.js"></script>
+    <!-- component 2 files -->
+    <script type="text/javascript" src="component2/component2.js"></script>
+    <script type="text/javascript" src="component2/table/table.module.js"></script>
+  </head>
+  <body ng-app="app">
+    <h1>Entry Point</h1>
+    <a href="#!component1">Component 1</a>
+    <a href="#!component2">Component 2</a>
+    <div class="ng-view"></div>
+  </body>
+</html>

@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('common').factory('sharetexts', function() {
+angular.module('common.sharedata', []);
+
+angular.module('common.sharedata').factory('sharetexts', function() {
   const sharetexts = {};
 
   sharetexts.list = [];
