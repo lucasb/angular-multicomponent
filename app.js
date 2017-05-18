@@ -6,7 +6,7 @@ angular.module('app', [
   'common',
   'component1',
   'component2'
- ]).config(function($routeProvider, $locationProvider) {
+ ]).config(function($routeProvider) {
     $routeProvider
     .when("/component1", {
         templateUrl: "./component1/partial.html"

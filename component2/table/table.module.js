@@ -2,8 +2,22 @@
 
 angular.module('component2.table', ['common.sharedata']);
 
-angular.module('component2.table').controller('TableCtrl', function (sharetexts) {
-  var self = this; 
+// Controller
+angular.module('component2.table').controller('TableCtrl', function (tableinfos) {
+  var self = this;
 
-  self.sharetexts = sharetexts.list;
+  self.infos = tableinfos.get();
+});
+
+// Service
+angular.module('component2.table').factory('tableinfos', function(sharetexts) {
+  const tableinfos = {};
+  
+  tableinfos.get = function() {
+    return sharetexts.list.map(function(element) {
+      return { text: element, size: (element ? element.length : 0) }
+    });
+  }
+
+  return tableinfos;
 });

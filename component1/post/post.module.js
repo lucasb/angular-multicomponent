@@ -2,6 +2,7 @@
 
 angular.module('component1.post', []);
 
+// controller
 angular.module('component1.post').controller('PostCtrl', function (messages) {
   var self = this; 
 
@@ -9,4 +10,18 @@ angular.module('component1.post').controller('PostCtrl', function (messages) {
     messages.add(message);
     self.newMessage = '';
   };
+});
+
+// Services
+angular.module('component1.post').factory('messages', function(sharetexts) {
+  const messages = {};
+
+  messages.list = [];
+
+  messages.add = function(message) {
+    messages.list.push({id: messages.list.length, text: message});
+    sharetexts.add(message);
+  };
+
+  return messages;
 });

@@ -3,6 +3,6 @@
     <h4>Table Module</h4>
     <table ng-controller="TableCtrl as table" border="1px">
         <thead><th>Text Messages</th><th>Size</th></thead>
-        <tr ng-repeat="sharetext in table.sharetexts track by $index"><td>{{ sharetext }}</td><td>{{ sharetext.length }}</td></tr>
+        <tr ng-repeat="info in table.infos track by $index"><td>{{ info.text }}</td><td>{{ info.size }}</td></tr>
     </table>
 </div>
