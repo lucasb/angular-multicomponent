@@ -4,7 +4,7 @@ angular.module('component2.table', ['common.sharedata']);
 
 // Controller
 angular.module('component2.table').controller('TableCtrl', function (tableinfos) {
-  var self = this;
+  const self = this;
 
   self.infos = tableinfos.get();
 });
@@ -12,7 +12,7 @@ angular.module('component2.table').controller('TableCtrl', function (tableinfos)
 // Service
 angular.module('component2.table').factory('tableinfos', function(sharetexts) {
   const tableinfos = {};
-  
+
   tableinfos.get = function() {
     return sharetexts.list.map(function(element) {
       return { text: element, size: (element ? element.length : 0) }
