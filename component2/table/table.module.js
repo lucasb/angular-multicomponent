@@ -1,19 +1,21 @@
 'use strict';
 
+// module: table
 angular.module('component2.table', ['common.sharedata']);
 
-// Controller
+// controller
 angular.module('component2.table').controller('TableCtrl', function (tableinfos) {
   const self = this;
-
+  // read from local service
   self.infos = tableinfos.get();
 });
 
-// Service
+// service
 angular.module('component2.table').factory('tableinfos', function(sharetexts) {
   const tableinfos = {};
 
   tableinfos.get = function() {
+    // read from share data service
     return sharetexts.list.map(function(element) {
       return { text: element, size: (element ? element.length : 0) }
     });
