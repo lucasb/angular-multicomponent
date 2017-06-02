@@ -1,5 +1,6 @@
 'use strict';
 
+// Register all modules
 angular.module('app', [
   'ng',
   'ngRoute',
