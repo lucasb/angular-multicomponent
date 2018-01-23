@@ -3,6 +3,14 @@
     <h4>Table Module</h4>
     <table ng-controller="TableCtrl as table" border="1px">
         <thead><th>Text Messages</th><th>Size</th></thead>
-        <tr ng-repeat="info in table.infos track by $index"><td>{{ info.text }}</td><td>{{ info.size }}</td></tr>
+        <tr ng-repeat="info in table.infos track by $index"><td>{{ info }}</td><td>{{ info ? info.length : 0 }}</td></tr>
     </table>
+    <hr/>
+    <h4>Insert Module</h4>
+    <div ng-controller="InsertCtrl as insert">
+        <form ng-submit="insert.addMessage(insert.newMessage)">
+            <input type="text" ng-model="insert.newMessage" />
+            <button type="submit">Insert New Message</button>
+        </form>
+    </div>
 </div>

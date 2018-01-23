@@ -19,11 +19,9 @@ angular.module('component1.post').controller('PostCtrl', function (messages) {
 angular.module('component1.post').factory('messages', function(sharetexts) {
   const messages = {};
 
-  messages.list = [];
+  messages.list = sharetexts.list
 
   messages.add = function(message) {
-    // Add new item to messages in post module and auto increvement id
-    messages.list.push({id: messages.list.length, text: message});
     // Add add same message to sharetexts in sharedata service
     sharetexts.add(message);
   };
